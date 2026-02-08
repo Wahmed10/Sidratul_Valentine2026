@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentine's Day 💜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════ LOADING OVERLAY ═══════════ -->
+  <div id="loading-overlay" class="loading-overlay" aria-live="polite">
+    <div class="loader-content">
+      <div class="loader-heart">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 56 C16 44, 2 32, 2 20 A14 14 0 0 1 32 12 A14 14 0 0 1 62 20 C62 32, 48 44, 32 56Z"
+                fill="url(#heartGrad)" />
+          <defs>
+            <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#c084fc" />
+              <stop offset="100%" stop-color="#f472b6" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <p class="loader-text">Preparing something special&hellip;</p>
+      <div class="loader-teddy" aria-hidden="true">🧸</div>
+    </div>
+  </div>
+
+  <!-- ═══════════ MAIN CONTENT ═══════════ -->
+  <main id="main-content" class="main-content hidden" role="main">
+
+    <!-- Decorative fixed hearts (CSS-only) -->
+    <div class="deco-heart deco-heart--tl" aria-hidden="true"></div>
+    <div class="deco-heart deco-heart--tr" aria-hidden="true"></div>
+    <div class="deco-heart deco-heart--bl" aria-hidden="true"></div>
+    <div class="deco-heart deco-heart--br" aria-hidden="true"></div>
+
+    <!-- Teddy bear decorations -->
+    <div class="deco-teddy deco-teddy--left" aria-hidden="true">🧸</div>
+    <div class="deco-teddy deco-teddy--right" aria-hidden="true">🧸</div>
+
+    <!-- Floating hearts container (JS-generated) -->
+    <div id="hearts-field" class="hearts-field" aria-hidden="true"></div>
+
+    <!-- Centre column -->
+    <div class="centre">
+      <h1 class="title">Happy Valentine's Day</h1>
+      <p class="subtitle">I made this little thing just for you&hellip;</p>
+
+      <button id="open-letter-btn" class="open-letter-btn" type="button">
+        <span class="btn-icon" aria-hidden="true">💌</span>
+        Open Letter
+      </button>
+
+      <!-- Letter card -->
+      <div id="letter-card" class="letter-card hidden" role="dialog" aria-label="Valentine letter">
+        <div class="letter-inner">
+          <p class="letter-greeting">My Dearest Love,</p>
+          <p class="letter-body">
+            Every moment with you feels like a beautiful dream I never want to wake up from.
+            You make my world brighter, warmer, and infinitely more wonderful just by being in it.
+          </p>
+          <p class="letter-body">
+            Thank you for being you — for your laugh that lights up every room,
+            for your kindness that inspires me daily, and for the love you give so freely.
+          </p>
+          <p class="letter-body">
+            Here's to us, to all the adventures we've shared and the countless ones still waiting.
+            I love you more than words on a screen could ever say. 💜
+          </p>
+          <p class="letter-sign-off">
+            Forever &amp; always,<br />
+            <span class="letter-name">Yours</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Next button (appears after letter reveal) -->
+      <button id="next-btn" class="next-btn hidden" type="button">
+        Next &rarr;
+      </button>
+    </div>
+  </main>
+
+  <!-- ═══════════ QUESTION SCREEN ═══════════ -->
+  <section id="question-screen" class="question-screen hidden" aria-label="Valentine question">
+    <!-- Floating hearts for question screen (JS-generated) -->
+    <div id="question-hearts-field" class="hearts-field" aria-hidden="true"></div>
+
+    <!-- Teddy bears on question screen -->
+    <div class="deco-teddy deco-teddy--q-tl" aria-hidden="true">🧸</div>
+    <div class="deco-teddy deco-teddy--q-br" aria-hidden="true">🧸</div>
+    <div class="deco-teddy deco-teddy--q-bl" aria-hidden="true">🐻</div>
+
+    <div class="question-centre">
+      <h2 class="question-title">Will you be my Valentine? 💜</h2>
+      <div class="question-buttons" id="question-buttons">
+        <button id="yes-btn" class="answer-btn answer-btn--yes" type="button">YES 💖</button>
+        <button id="no-btn" class="answer-btn answer-btn--no" type="button">NO 💔</button>
+      </div>
+      <p id="celebrate-msg" class="celebrate-msg hidden">Yay! I love you so much! 🥰💜✨</p>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONFETTI CANVAS ═══════════ -->
+  <canvas id="confetti-canvas" class="confetti-canvas hidden" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
